@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  
+  <title>Corsi - Impara Ripetendo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Inserimento cdn-->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  <!--angular-->
+  <script src="./angular.js"></script>
+ 
+  <link rel="shortcut icon" href="img/logo.png"/> 
+  <link rel="stylesheet" href="stile.css">
+  <script src="./script.js"></script>
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="myApp3" ng-controller="myCtrl3">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      
+      <a id="homelink" href="index.html" title="Homepage"><img id="loghino"src="img/home3.png"></img></a>
+  
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="corsi.html">I CORSI</a></li>
+        <li><a href="tariffe.html">TARIFFE</a></li>
+        <li><a href="entraconnoi.html">ENTRA CON NOI</a></li>
+        <li><a href="contatti.html">CHI SIAMO</a></li>
+        <li><a id="login"  href="login.html">LOGIN</a></li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+<br>
+
+  <div id="corsidescrizione" class="container-fluid bg-grey" >
+   <div class="row">
+    <div id="logincontainer">
+        <div class="simple-login-container ">
+            <h2>Login</h2>
+            <p>Inserisci le tue credenziali per accedere al profilo personale</p>
+
+            <form name="myForm" novalidate>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="user" ng-model="user" placeholder="Username" ng-click="openname()"  required>
+                    <span ng-show="showname"style="color:red">
+                      <span ng-show="myForm.user.$error.required">Username obbligatorio</span>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="email" name="mail" ng-model="mail" placeholder="Email istituzionale" class="form-control" ng-click="openmail()"required>
+                    <span ng-show="showmail" style="color:red" >
+                    <span ng-show="myForm.mail.$error.required">Email obbligatoria</span>
+                    </span>
+                    <span style="color:red" ng-show="myForm.mail.$error.email">Indirizzo e-mail errato</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="number" name="matricola" ng-model="matricola" placeholder="Matricola" class="form-control" ng-click="openmatricola()" required>
+                    <span ng-show="showmatricola" style="color:red" >
+                      <span ng-show="myForm.matricola.$error.required">Numero matricola obbligatorio</span>
+                      </span>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" name="pass" ng-model="pass" placeholder="Password" class="form-control" ng-pattern="pwdpattern" ng-click="openpass()" required>
+                    <span ng-show="showpass" style="color:red" >
+                      <span ng-show="myForm.pass.$error.required">Password obbligatoria.</span>
+                      </span>
+                      <span style="color: red;" ng-show="myForm.pass.$error.pattern">Lunghezza minima 8 caratteri, almeno una lettera maiuscola e minuscola ed un simbolo speciale</span>
+                      
+                </div>
+                </div>                                                                                        
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-login"  value="Entra" ng-disabled=" myForm.user.$error.required ||  myForm.mail.$error.required || myForm.matricola.$error.required ||  myForm.pass.$error.required || myForm.pass.$error.pattern"  >
+                </div>
+            </div>
+          </form>
+            </div>
+        </div>
+        
+  
+            
+                   
+                  </div>
+              </div>
+            </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+<footer  class="container-fluid text-center">
+  <a href="#myPage" title="Vai in cima">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+
+  <div>Sito realizzato da: Stefano Santomauro & Emanuela Cristino <br>
+  <a id="foot" href="contatti.html" title="contattaci">contattaci</a></div>
+  <hr>
+  <div>2021 - All Right Reserved - ICT innovazione sociale, comunicazione e nuove tecnologie </div>
+  <div>Corso di Design di Applicazioni Web</div>
+</footer>
+
+
+
+</body>
+</html>

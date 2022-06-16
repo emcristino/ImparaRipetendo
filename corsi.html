@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  
+  <title>Corsi - Impara Ripetendo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Inserimento cdn-->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  <!--angular-->
+  <script src="./angular.js"></script>
+  
+   
+ 
+  <link rel="shortcut icon" href="img/logo.png"/> 
+  <link rel="stylesheet" href="stile.css">
+  <script src="./script.js"></script>
+  
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ng-app="myApp" ng-controller="myCtrl">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      
+      <a id="homelink" href="index.html" title="Homepage"><img id="loghino"src="img/home3.png"></img></a>
+  
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="schedattiva" href="corsi.html">I CORSI</a></li>
+        <li><a href="tariffe.html">TARIFFE</a></li>
+        <li><a href="entraconnoi.html">ENTRA CON NOI</a></li>
+        <li><a href="contatti.html">CHI SIAMO</a></li>
+        <li><a id="login"  href="login.html">LOGIN</a></li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+
+  <div id="corsidescrizione" class="container-fluid bg-grey" >
+   <div class="row">
+    <div class="col-sm-8">
+    <h2 id="c" >I NOSTRI CORSI</h2>
+    <p>In questa pagina potrai trovare il corso di cui hai bisogno. È facile, per trovarlo tutto quello che devi fare è selezionare l'anno accademico di interesse </p>
+    <p>Buono studio!</p>
+   </div>
+   <div style="text-align: center"class="col-sm-4">
+    <img id="studio" src="img/study.png">
+   </div>
+  </div>
+  </div>
+  
+<br>
+  <div>
+    <p>
+      <input id="cercacorso" type="text" ng-model="test" placeholder="Nome del corso"></input>
+      <button  class="btn btn-danger" type="button" ng-click ="openme()" value="filtra">CERCA </button>
+      <img ng-show="showme"ng-click="closeme()"src="img/x.png">
+    </p> 
+    <div id="containerlistacorsi">
+    
+     <p class="listacorsi" ng-show="showme" ng-repeat="x in corsi | filter : test ">   
+     <a href="#"class="listacorsia">      
+     {{ x }}
+    </a>
+     </p>
+    </div>
+</div>
+
+  <div class="accordion" id="accordionExample">
+    <div class="card sezione col-sm-4 ">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-primary" type="button" ng-click="openOne()"> 
+            CORSI PRIMO ANNO 
+          </button>
+        </h2>
+      </div>
+     
+      <div id="collapseOne" ng-show="showOne">
+        <div  class="card-body">
+          
+            <div class="thumbnail">
+                <img class="cardcorso"src="img/php.png">
+                <div>
+                    <p><strong>Sviluppo software di applicazioni informatiche</strong></p>
+                    <p>Informatica, I anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso" src="img/html.jpeg">
+                <div>
+                    <p><strong>Introduzione all'informatica e alle reti</strong></p>
+                    <p>Informatica, I anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso" src="img/rete.png">
+
+                <div>
+                    <p><strong>Società delle reti: teorie e metodi</strong></p>
+                    <p>Sociologia, I anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso" src="img/dirittoprivato.jpeg">
+                <div>
+                  <p><strong>Diritto privato</strong></p>
+                  <p>Diritto, I anno</p>
+                </div>
+                <div>
+                  <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                </div>
+
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="card sezione col-sm-4">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-primary collapsed" type="button" ng-click="openTwo()">
+            CORSI SECONDO ANNO
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" ng-show="showTwo">
+        <div class="card-body">
+          <div class="thumbnail">
+            <img class="cardcorso"src="img/economia.jpeg">
+            <div>
+                <p><strong>Economia dei modelli di business</strong></p>
+                <p>Economia, II anno</p>
+              </div>
+              <div>
+                <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+              </div>
+
+          </div>
+          <div class="thumbnail">
+            <img class="cardcorso"src="img/sql.png">
+
+            <div>
+                <p><strong>Gestione e condivisione di basi di dati e conoscenza</strong></p>
+                <p>Informatica, II anno</p>
+              </div>
+              <div>
+                <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+              </div>
+
+          </div>
+          <div class="thumbnail">
+            <img class="cardcorso"src="img/media.png">
+            <div>
+                <p><strong>Sociologia dei new media</strong></p>
+                <p>Sociologia, II anno</p>
+              </div>
+              <div>
+                <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+              </div>
+
+        </div>
+        <div class="thumbnail">
+          <img class="cardcorso"src="img/dirittocommerciale.jpeg">
+          <div>
+            <p><strong>Diritto commerciale</strong></p>
+            <p>Diritto, II anno</p>
+          </div>
+          <div>
+            <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+          </div>
+
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="card sezione col-sm-4">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-primary collapsed" type="button" ng-click="openThree()">
+            CORSI TERZO ANNO
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" ng-show="showThree">
+        <div class="card-body">
+            <div class="thumbnail">
+                <img class="cardcorso"src="img/java.png">
+                <div>
+                    <p><strong>Introduzione al future internet</strong></p>
+                    <p>Informatica, III anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso"src="img/informatica.jpeg">
+                <div>
+                    <p><strong>Fondamenti di informatica</strong></p>
+                    <p>Informatica, III anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso"src="img/javascript.jpeg">
+                <div>
+                    <p><strong>Design di applicazioni web</strong></p>
+                    <p>Informatica, III anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+              <div class="thumbnail">
+                <img class="cardcorso"src="img/interaction.png">
+                <div>
+                    <p><strong>Introduzione a interaction design</strong></p>
+                    <p>Informatica, III anno</p>
+                  </div>
+                  <div>
+                    <button class="btn btn-danger"><a class="iscriviti"href="tariffe.html">Iscriviti</a></button>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+<footer  class="container-fluid text-center">
+  <a href="#myPage" title="Vai in cima">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+
+  <div>Sito realizzato da: Stefano Santomauro & Emanuela Cristino <br>
+  <a id="foot" href="contatti.html" title="contattaci">contattaci</a></div>
+  <hr>
+  <div>2021 - All Right Reserved - ICT innovazione sociale, comunicazione e nuove tecnologie </div>
+  <div>Corso di Design di Applicazioni Web</div>
+</footer>
+
+
+
+</body>
+</html>

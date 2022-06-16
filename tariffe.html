@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  
+  <title>Tariffe - Impara Ripetendo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Inserimento cdn-->
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  <!--angular-->
+  <script src="./angular.js"></script>
+
+ 
+  <link rel="shortcut icon" href="img/logo.png"/> 
+  <link rel="stylesheet" href="stile.css">
+  <script src="./script.js"></script>
+  
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" >
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      
+        <a id="homelink" href="index.html" title="Homepage"><img id="loghino"src="img/home3.png"></img></a>
+  
+    
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="corsi.html">I CORSI</a></li>
+        <li><a id="schedattiva"href="tariffe.html">TARIFFE</a></li>
+        <li><a href="entraconnoi.html">ENTRA CON NOI</a></li>
+        <li><a href="contatti.html">CHI SIAMO</a></li>
+        <li><a id="login"  href="login.html">LOGIN</a></li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+
+  <div id="corsidescrizione" class="container-fluid bg-grey" >
+   <div class="row">
+    <div class="col-sm-8">
+    <h2 id="c" >I PREZZI</h2>
+    <p>Abbiamo creato tre fasce di abbonamenti per permetterti di scegliere il piano che più ti aggrada</p>
+    <p>Attenzione, pagamenti accettati: conti corrente, carte di credito e paypal</p>
+   </div>
+   <div style="text-align: center"class="col-sm-4">
+    <img id="studio" src="img/pricing.png">
+   </div>
+  </div>
+  </div>
+
+  <!-- Prezzi e tariffe -->
+  <div id="pricing" class="container-fluid">
+    <div class="text-center">
+      <h2>Tariffe</h2>
+      <h4>Scegli il piano più adatto a te</h4>
+    </div>
+    <div class="row slideanim">
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1>Base</h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>15h</strong> Lezioni Telematiche</p>
+            <p><strong>1h</strong> Consulenza personale</p>
+            <p><strong><s>Accesso per un 1 mese alle risorse del corso</s></strong></p>
+            <p  id="special"><strong>fino al 31/01 accesso illimitato alle risorse </strong></p>
+          </div>
+          <div class="panel-footer">
+            <h3>€49,90</h3>
+            <h4>al mese</h4>
+            <button class="btn btn-lg">Iscriviti</button>
+          </div>
+        </div>      
+      </div>     
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1>Completo</h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>20h</strong> Lezioni Telematiche</p>
+            <p><strong>5h</strong> Lezioni in presenza</p>
+            <p><strong>1h</strong> Consulenza personale</p>
+            <p><strong>Accesso per 1 mese alle risorse del corso</strong> </p>
+            
+          </div>
+          <div class="panel-footer">
+            <h3>€69,90</h3>
+            <h4>al mese</h4>
+            <button class="btn btn-lg">Iscriviti</button>
+          </div>
+        </div>      
+      </div>       
+      <div class="col-sm-4 col-xs-12">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading">
+            <h1>Premium</h1>
+          </div>
+          <div class="panel-body">
+            <p><strong>fino a 25h</strong> Lezioni Telematiche</p>
+            <p><strong>fino a 10h</strong> Lezioni in Presenza</p>
+            <p><strong>2h</strong> Consulenza personale</p>
+            <p><strong>Accesso illimitato alle risorse del corso</strong> </p>
+          </div>
+          <div class="panel-footer">
+            <h3>€89,90</h3>
+            <h4>al mese</h4>
+            <button class="btn btn-lg">Iscriviti</button>
+          </div>
+        </div>      
+      </div>    
+    </div>
+  </div>
+  
+  <br>
+
+
+<footer  class="container-fluid text-center">
+  <a href="#myPage" title="Vai in cima">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+
+  <div>Sito realizzato da: Stefano Santomauro & Emanuela Cristino <br>
+  <a id="foot" href="contatti.html" title="contattaci">contattaci</a></div>
+  
+  <hr>
+  <div>2021 - All Right Reserved - ICT innovazione sociale, comunicazione e nuove tecnologie </div>
+  <div>Corso di Design di Applicazioni Web</div>
+</footer>
+
+
+
+</body>
+</html>
